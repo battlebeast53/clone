@@ -1,0 +1,9 @@
+Submission Details
+==================
+Timestamp:     2026-06-22T09:01:53.820Z
+Full Name:     Harshit Pandhare
+Company Email: harshitpandhare53@mendix.com
+Phone Number:  +919156250830
+Company Name:  hp
+Country:       India
+Service Name:  Managed Email Security
