@@ -178,12 +178,12 @@ export default function Navbar({ onOpenAssessment }) {
 
   // Handle Logo Toggle logic
   useEffect(() => {
-    if (DARK_LOGO_ROUTES.includes(pathname) || isScrolled || isMobile) {
+    if (DARK_LOGO_ROUTES.includes(pathname) || isScrolled || isMobileMenuOpen) {
       setLogoSrc('/images/home/Stfoxlogo.webp');
     } else {
       setLogoSrc('/images/home/StfoxLogo1.webp');
     }
-  }, [pathname, isScrolled, isMobile]);
+  }, [pathname, isScrolled, isMobileMenuOpen]);
 
   // Track active menu items based on current URL path
   useEffect(() => {
@@ -220,17 +220,17 @@ export default function Navbar({ onOpenAssessment }) {
   };
 
   // Determine text color based on scrolled status and current route
-  const headerTextColor = isScrolled || isMobile || isMobileMenuOpen
+  const headerTextColor = isScrolled || isMobileMenuOpen
     ? 'text-[#1F1F1F]' 
     : (DARK_LOGO_ROUTES.includes(pathname) ? 'text-[#1F1F1F]' : 'text-white');
 
   return (
     <>
       <header
-        className={`flex justify-center items-center fixed top-0 left-0 w-full z-50 transition-all duration-100 ${
-          isScrolled 
-            ? 'bg-white dark:bg-gray-800 shadow-sm border-b border-gray-100' 
-            : (isMobile || isMobileMenuOpen ? 'bg-white text-[#1F1F1F]' : 'bg-transparent')
+        className={`flex justify-center items-center fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled || isMobileMenuOpen
+            ? 'bg-white shadow-sm border-b border-gray-100 text-[#1F1F1F]' 
+            : 'bg-transparent'
         } ${headerTextColor}`}
       >
         <div className="flex justify-between w-full 2xl:mx-[150px] lg:mx-24 mx-5 py-3 items-center">
